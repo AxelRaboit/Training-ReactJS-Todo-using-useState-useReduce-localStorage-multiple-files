@@ -1,4 +1,5 @@
 import Form from './components/todo/Form';
+import './App.css';
 
 function App() {
   return (
