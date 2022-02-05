@@ -61,6 +61,7 @@ function Form() {
                 dispatch({type: ACTIONS.ADD_TODO, payload: {content: content}})
                 setErrorMessage('');
                 setContent('');
+                setCharactersCount(0)
             } else {
                 setErrorMessage('La limite est de 80 characters')    
             }
