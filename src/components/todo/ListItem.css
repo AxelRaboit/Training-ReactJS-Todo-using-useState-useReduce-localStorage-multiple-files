@@ -1,0 +1,7 @@
+.taskDone {
+    text-decoration: line-through;
+}
+
+.taskToDo {
+    text-decoration: none;
+}

@@ -1,0 +1,29 @@
+.listButtonToggle {
+    padding: 10px 25px;
+    background-color: #f2c02b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.listButtonToggle:hover {
+    background-color: #ac881b;
+}
+
+.listButtonDelete {
+    padding: 10px 25px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.listButtonDelete:hover {
+    background-color: rgb(177, 3, 3);
+}

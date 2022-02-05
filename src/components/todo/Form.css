@@ -1,0 +1,35 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form label {
+    margin: 10px;
+}
+
+.form input {
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.errorMessage {
+    color: white;
+    background-color: red;
+    padding: 10px 25px;
+    border-radius: 5px;
+}
+
+.submitButton {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
