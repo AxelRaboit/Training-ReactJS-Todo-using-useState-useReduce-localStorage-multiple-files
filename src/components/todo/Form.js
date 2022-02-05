@@ -40,11 +40,11 @@ function addTodo(content) {
     return {id: Date.now(), content: content, complete: false}
 }
 
-
 function Form() {
 
     const [todos, dispatch] = useReducer(reducer, getLocalStorage());
     const [content, setContent] = useState('');
+    const [charactersCount, setCharactersCount] = useState(0);
     const [errorMessage, setErrorMessage] = useState('');
 
     useEffect(() => {
@@ -79,9 +79,18 @@ function Form() {
                     type="text" 
                     placeholder='ex: Acheter du pain'
                     value={content}
-                    onChange={e => setContent(e.target.value)}
+                    onChange={e => {setContent(e.target.value); setCharactersCount(e.target.value.length)}}
                 />
                 <button className='submitButton' type='submit'>Valider</button>
+                </div>
+                <div className='container__charactersLimit'>
+                    <p className={charactersCount <= 80 ? 'charactersLimitOk' : 'charactersLimitNotOk'}>
+                        {
+                            charactersCount <= 80
+                                ? (`Il vous reste ${charactersCount} sur 80 caractères.`)
+                                : ('Vous avez dépassé la limite de caractères qui est de 80 !')
+                        }    
+                    </p>
                 </div>
                 {
                     errorMessage && <p className='errorMessage'>{errorMessage}</p>

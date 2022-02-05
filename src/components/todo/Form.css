@@ -13,6 +13,16 @@
 
 }
 
+.charactersLimitOk {
+    color: white;
+}
+
+.charactersLimitNotOk {
+    color: red;
+}
+
+
+
 .container__form form {
     display: flex;
     flex-direction: column;
