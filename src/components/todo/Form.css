@@ -1,22 +1,39 @@
-.form {
+.container__form {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin: 0 auto;
-}
-
-.form label {
-    margin: 10px;
-}
-
-.form input {
+    width: 80%;
+    margin: 150px auto;
+    padding: 50px;
     border-radius: 5px;
+    background-color: rgb(30, 34, 48);
+}
+
+.container__form__item {
+    display: flex;
+
+}
+
+.container__form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container__form label {
+    margin-bottom: 10px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.container__form input {
+    width: 80%;
+    border-radius: 5px 0 0 5px;
     border: 1px solid;
-    padding: 10px 0;
-    text-align: center;
+    padding: 10px;
 }
 
 .errorMessage {
+    text-align: center;
     color: white;
     background-color: red;
     padding: 10px 25px;
@@ -27,9 +44,9 @@
     background-color: green;
     color: white;
     border: none;
-    padding: 10px 0;
-    margin: 10px 0;
-    border-radius: 5px;
+    padding: 10px;
+    width: 20%;
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 16px;
 }

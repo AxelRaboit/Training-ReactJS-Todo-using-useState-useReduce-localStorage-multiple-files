@@ -6,10 +6,12 @@ import './Todo.css';
 function Todo({ todo, dispatch }) {
 
     return (
-        <ul className={todo.complete ? 'completedList' : 'incompletList'}>
-            <ListItem todo={todo}/>
-            <Buttons todo={todo} dispatch={dispatch} />
-        </ul>
+        <div className='container__list'>
+            <ul className={`${todo.complete ? 'completedList' : 'incompletList'}`}>
+                <Buttons todo={todo} dispatch={dispatch} />
+                <ListItem todo={todo}/>
+            </ul>
+        </div>
     )
 }
 

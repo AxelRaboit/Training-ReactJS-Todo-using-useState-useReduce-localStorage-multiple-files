@@ -1,27 +1,35 @@
-.listButtonToggle {
+.buttonList{
     padding: 10px 25px;
-    background-color: #f2c02b;
     color: white;
     border: none;
     border-radius: 5px;
-    margin: 10px;
+    margin: 2px;
     transition: all 0.3s linear;
     cursor: pointer;
 }
 
-.listButtonToggle:hover {
-    background-color: #ac881b;
+.container__buttons svg:last-child {
+    margin-right: 20px;
+}
+
+.listButtonToggleValidate {
+    background-color: green;
+}
+
+.listButtonToggleValidate:hover {
+    background-color: rgb(0, 84, 0);
+}
+
+.listButtonToggleCancel {
+    background-color: rgb(215, 166, 4);
+}
+
+.listButtonToggleCancel:hover {
+    background-color: rgb(169, 130, 2);
 }
 
 .listButtonDelete {
-    padding: 10px 25px;
     background-color: red;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    transition: all 0.3s linear;
-    cursor: pointer;
 }
 
 .listButtonDelete:hover {

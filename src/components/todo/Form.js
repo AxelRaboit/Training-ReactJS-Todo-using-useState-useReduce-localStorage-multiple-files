@@ -1,6 +1,7 @@
-import React, { useState, useEffect , useReducer, Fragment } from 'react';
+import React, { useState, useEffect , useReducer } from 'react';
 import Todo from './Todo';
 import './Form.css';
+import { IoLogoHackernews } from 'react-icons/io5';
 
 export const ACTIONS = {
     ADD_TODO: 'add-todo',
@@ -55,40 +56,44 @@ function Form() {
     function handleSubmit(e) {
         e.preventDefault();
         if(content) {
-            dispatch({type: ACTIONS.ADD_TODO, payload: {content: content}})
-            setErrorMessage('');
-            setContent('');
+            if(content.length < 80) {
+                dispatch({type: ACTIONS.ADD_TODO, payload: {content: content}})
+                setErrorMessage('');
+                setContent('');
+            } else {
+                setErrorMessage('La limite est de 80 characters')    
+            }
         } else {
             setErrorMessage('Veuillez indiquer une tâche')
         }
     }
 
     return (
-        <Fragment>
+        <div className='container__form'>
             <form onSubmit={handleSubmit}>
-                <div className='form'>
-                    <label htmlFor="todoInput">
-                        Inscrire une tâche
-                    </label>
-                    <input 
-                        id='todoInput'
-                        type="text" 
-                        placeholder='ex: Acheter du pain'
-                        value={content}
-                        onChange={e => setContent(e.target.value)}
-                    />
-                    {
-                        errorMessage && <p className='errorMessage'>{errorMessage}</p>
-                    }
-                    <button className='submitButton' type='submit'>Valider</button>
+            <label htmlFor="todoInput">
+                Inscrire une tâche
+            </label>
+            <div className='container__form__item'>
+                <input 
+                    id='todoInput'
+                    type="text" 
+                    placeholder='ex: Acheter du pain'
+                    value={content}
+                    onChange={e => setContent(e.target.value)}
+                />
+                <button className='submitButton' type='submit'>Valider</button>
                 </div>
+                {
+                    errorMessage && <p className='errorMessage'>{errorMessage}</p>
+                }
             </form>
-            <div>
+            <div className='container__todos'>
                 {todos.map(todo => {
                     return <Todo key={todo.id} todo={todo} dispatch={dispatch}/>
                 })}
             </div>
-        </Fragment>
+        </div>
     )
 }
 
