@@ -54,6 +54,12 @@ function Form() {
         localStorage.setItem('id', Date.now());
     },[todos])
 
+    useEffect(() => {
+        setTimeout(() => {
+            setErrorMessage('');
+        }, 5000);
+    }, [errorMessage]);  
+
     function handleSubmit(e) {
         e.preventDefault();
         if(content) {
