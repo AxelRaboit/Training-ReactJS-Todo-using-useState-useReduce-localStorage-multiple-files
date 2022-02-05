@@ -8,6 +8,8 @@ export const ACTIONS = {
     DELETE_TODO: 'delete-todo'
 }
 
+const CHARACTERS_LIMIT = 80;
+
 function reducer(todos, action) {
     switch(action.type) {
         case ACTIONS.ADD_TODO:
@@ -55,7 +57,7 @@ function Form() {
     function handleSubmit(e) {
         e.preventDefault();
         if(content) {
-            if(content.length < 80) {
+            if(content.length < CHARACTERS_LIMIT) {
                 dispatch({type: ACTIONS.ADD_TODO, payload: {content: content}})
                 setErrorMessage('');
                 setContent('');
@@ -84,10 +86,10 @@ function Form() {
                 <button className='submitButton' type='submit'>Valider</button>
                 </div>
                 <div className='container__charactersLimit'>
-                    <p className={charactersCount <= 80 ? 'charactersLimitOk' : 'charactersLimitNotOk'}>
+                    <p className={charactersCount <= CHARACTERS_LIMIT ? 'charactersLimitOk' : 'charactersLimitNotOk'}>
                         {
-                            charactersCount <= 80
-                                ? (`Il vous reste ${charactersCount} sur 80 caractères.`)
+                            charactersCount <= CHARACTERS_LIMIT
+                                ? (`Il vous reste ${ CHARACTERS_LIMIT - charactersCount} sur ${CHARACTERS_LIMIT} caractères.`)
                                 : ('Vous avez dépassé la limite de caractères qui est de 80 !')
                         }    
                     </p>
