@@ -8,7 +8,7 @@ export const ACTIONS = {
     DELETE_TODO: 'delete-todo'
 }
 
-const CHARACTERS_LIMIT = 80;
+const CHARACTERS_LIMIT = 120;
 
 function reducer(todos, action) {
     switch(action.type) {
