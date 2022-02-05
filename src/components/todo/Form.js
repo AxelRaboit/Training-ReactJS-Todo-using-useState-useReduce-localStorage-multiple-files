@@ -63,7 +63,7 @@ function Form() {
     function handleSubmit(e) {
         e.preventDefault();
         if(content) {
-            if(content.length < CHARACTERS_LIMIT) {
+            if(content.length <= CHARACTERS_LIMIT) {
                 dispatch({type: ACTIONS.ADD_TODO, payload: {content: content}})
                 setErrorMessage('');
                 setContent('');
