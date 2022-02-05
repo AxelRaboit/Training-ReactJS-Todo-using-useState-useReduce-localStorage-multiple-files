@@ -1,7 +1,6 @@
 import React, { useState, useEffect , useReducer } from 'react';
 import Todo from './Todo';
 import './Form.css';
-import { IoLogoHackernews } from 'react-icons/io5';
 
 export const ACTIONS = {
     ADD_TODO: 'add-todo',
