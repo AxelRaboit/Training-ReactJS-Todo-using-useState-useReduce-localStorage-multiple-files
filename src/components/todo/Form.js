@@ -5,7 +5,8 @@ import './Form.css';
 export const ACTIONS = {
     ADD_TODO: 'add-todo',
     TOGGLE_TODO: 'toggle-todo',
-    DELETE_TODO: 'delete-todo'
+    DELETE_TODO: 'delete-todo',
+    EDIT_TODO: 'edit-todo',
 }
 
 const CHARACTERS_LIMIT = 120;
@@ -18,6 +19,15 @@ function reducer(todos, action) {
             return todos.map(todo => {
                 if(todo.id === action.payload.id) {
                   return { ...todo, complete: !todo.complete }
+                }
+                return todo
+              })
+        case ACTIONS.EDIT_TODO:
+            return todos.map(todo => {
+                if(todo.id === action.payload.id) {
+                  console.log(todo)
+
+                  //TODO IMPLEMENT THE FUNCTION FOR EDITING A TODO
                 }
                 return todo
               })

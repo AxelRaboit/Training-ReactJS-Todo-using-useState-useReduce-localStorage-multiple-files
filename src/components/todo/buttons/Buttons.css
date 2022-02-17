@@ -35,3 +35,11 @@
 .listButtonDelete:hover {
     background-color: rgb(177, 3, 3);
 }
+
+.listButtonEdit {
+    background-color: rgb(215, 166, 4);
+}
+
+.listButtonEdit:hover {
+    background-color: rgb(169, 130, 2);
+}
